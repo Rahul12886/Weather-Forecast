@@ -8,7 +8,6 @@ const HomePage = lazy(() => import('./pages/HomePage.jsx'));
 const ForecastDetailsPage = lazy(() => import('./pages/ForecastDetailsPage.jsx'));
 const FavoriteCitiesPage = lazy(() => import('./pages/FavoriteCitiesPage.jsx'));
 const SettingsPage = lazy(() => import('./pages/SettingsPage.jsx'));
-const NotFoundPage = lazy(() => import('./pages/NotFoundPage.jsx'));
 
 export default function App() {
   return (
@@ -20,7 +19,6 @@ export default function App() {
             <Route path="/forecast" element={<ForecastDetailsPage />} />
             <Route path="/favorites" element={<FavoriteCitiesPage />} />
             <Route path="/settings" element={<SettingsPage />} />
-            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
       </Suspense>
