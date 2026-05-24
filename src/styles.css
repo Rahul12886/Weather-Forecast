@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: 'DM Sans', Inter, ui-sans-serif, system-ui, sans-serif;
+    @apply bg-slate-100 text-slate-950 transition-colors duration-500 dark:bg-slate-950 dark:text-white;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-lg border border-white/55 bg-white/70 shadow-soft backdrop-blur-2xl transition dark:border-sky-200/10;
+  }
+
+  .dark .glass-panel {
+    background-color: rgb(16 24 39 / 78%);
+  }
+
+  .metric-card {
+    @apply rounded-lg border border-white/60 bg-white/75 p-4 shadow-soft backdrop-blur-xl transition hover:-translate-y-0.5 hover:shadow-glow dark:border-white/10 dark:bg-white/10;
+  }
+
+  .icon-button {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/60 bg-white/75 text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-2 focus:ring-sky-400 dark:border-white/10 dark:bg-white/10 dark:text-slate-100 dark:hover:bg-white/15;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-400 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200;
+  }
+
+  .nav-link {
+    @apply inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-white/60 hover:text-slate-950 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white;
+  }
+
+  .nav-link.active {
+    @apply bg-white text-slate-950 shadow-sm dark:bg-white/15 dark:text-white;
+  }
+
+  .pill-tab {
+    @apply rounded-full border border-slate-200/80 px-2 py-1 text-[11px] font-bold text-slate-500 transition hover:border-sky-300 hover:bg-sky-500/10 hover:text-sky-700 dark:border-white/10 dark:text-slate-300 dark:hover:border-sky-300/50 dark:hover:text-sky-100 lg:px-3 lg:py-1.5 lg:text-xs;
+  }
+
+  .pill-tab.active {
+    @apply border-sky-400 bg-sky-500/15 text-sky-700 dark:text-sky-100;
+  }
+
+  .section-title {
+    @apply text-sm font-bold uppercase tracking-normal text-slate-500 dark:text-slate-300;
+  }
+
+  .skeleton {
+    @apply animate-shimmer rounded-lg bg-[linear-gradient(90deg,rgba(148,163,184,0.18)_0%,rgba(255,255,255,0.46)_45%,rgba(148,163,184,0.18)_100%)] bg-[length:700px_100%] dark:bg-[linear-gradient(90deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0.16)_45%,rgba(255,255,255,0.06)_100%)];
+  }
+}
+
+.weather-clear {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(251, 191, 36, 0.36), transparent 34%),
+    linear-gradient(135deg, #e0f2fe 0%, #fef3c7 42%, #f8fafc 100%);
+}
+
+.weather-clouds {
+  background:
+    radial-gradient(circle at 20% 16%, rgba(148, 163, 184, 0.35), transparent 28%),
+    linear-gradient(135deg, #e2e8f0 0%, #bae6fd 48%, #f8fafc 100%);
+}
+
+.weather-rain {
+  background:
+    radial-gradient(circle at 84% 10%, rgba(56, 189, 248, 0.28), transparent 32%),
+    linear-gradient(135deg, #dbeafe 0%, #99f6e4 46%, #f8fafc 100%);
+}
+
+.weather-snow {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.75), transparent 30%),
+    linear-gradient(135deg, #f8fafc 0%, #dbeafe 48%, #ecfeff 100%);
+}
+
+.weather-night {
+  background:
+    radial-gradient(circle at 76% 14%, rgba(125, 211, 252, 0.22), transparent 30%),
+    linear-gradient(135deg, #080d1b 0%, #101827 46%, #19243a 100%);
+}
