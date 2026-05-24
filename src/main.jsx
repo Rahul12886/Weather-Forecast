@@ -5,13 +5,6 @@ import App from './App.jsx';
 import { WeatherProvider } from './context/WeatherContext.jsx';
 import './styles.css';
 
-const redirect = sessionStorage.redirect;
-delete sessionStorage.redirect;
-
-if (redirect && redirect !== location.href) {
-  history.replaceState(null, null, redirect);
-}
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HashRouter future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
@@ -24,6 +17,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => {});
+    navigator.serviceWorker
+      .register('/Weather-Forecast/sw.js')
+      .catch(() => {});
   });
 }

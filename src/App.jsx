@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
 import AppShell from './components/layout/AppShell.jsx';
 import ErrorBoundary from './components/system/ErrorBoundary.jsx';
 import PageLoader from './components/system/PageLoader.jsx';
@@ -13,14 +14,14 @@ export default function App() {
   return (
     <ErrorBoundary>
       <Suspense fallback={<PageLoader />}>
-        <Routes>
-          <Route element={<AppShell />}>
+        <AppShell>
+          <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/forecast" element={<ForecastDetailsPage />} />
             <Route path="/favorites" element={<FavoriteCitiesPage />} />
             <Route path="/settings" element={<SettingsPage />} />
-          </Route>
-        </Routes>
+          </Routes>
+        </AppShell>
       </Suspense>
     </ErrorBoundary>
   );
