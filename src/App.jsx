@@ -14,14 +14,14 @@ export default function App() {
   return (
     <ErrorBoundary>
       <Suspense fallback={<PageLoader />}>
-        <AppShell>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/forecast" element={<ForecastDetailsPage />} />
-            <Route path="/favorites" element={<FavoriteCitiesPage />} />
-            <Route path="/settings" element={<SettingsPage />} />
-          </Routes>
-        </AppShell>
+        <Routes>
+          <Route path="/" element={<AppShell />}>
+            <Route index element={<HomePage />} />
+            <Route path="forecast" element={<ForecastDetailsPage />} />
+            <Route path="favorites" element={<FavoriteCitiesPage />} />
+            <Route path="settings" element={<SettingsPage />} />
+          </Route>
+        </Routes>
       </Suspense>
     </ErrorBoundary>
   );
